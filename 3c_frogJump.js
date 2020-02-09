@@ -16,3 +16,16 @@
 // after the second jump, at position 10 + 30 + 30 = 70
 // after the third jump, at position 10 + 30 + 30 + 30 = 100
 
+const solution = (X, Y, D) => {
+    // write your code in JavaScript (Node.js 4.0.0)
+    if(X === Y) {
+        return 0;
+    } else if(D >= (Y-X)) {
+        return 1;
+    } else {
+        let jumps = parseInt((Y-X)/D);
+        jumps += ((Y-X)%D > 0) ? 1 : 0;
+        
+        return jumps;
+    }
+}
